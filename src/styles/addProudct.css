@@ -1,0 +1,56 @@
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .form-div {
+        flex-direction: row;
+    }
+}
+
+.input {
+    height: 3rem;
+    font-size: 1rem;
+}
+
+.form {
+    width: 100%;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader {
+    margin-right: 0.5rem;
+    height: 1rem;
+    width: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.buttonOrange {
+  background-color: #f97316;
+  height: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.buttonOrange:hover {
+  background-color: #ea580c;
+}
+
+@media (min-width: 640px) {
+  .buttonOrange {
+    height: 3rem;
+  }
+}

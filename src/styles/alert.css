@@ -1,0 +1,29 @@
+.alert {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  background-color: white;
+  color: #111827;
+}
+
+.alertDestructive {
+  border-color: #fca5a5;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.alertTitle {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.alertDescription {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.alertDestructive .alertDescription {
+  color: #b91c1c;
+}
