@@ -78,13 +78,13 @@ export async function POST(request) {
                     results.priceChanges++;
 
                     if (newPrice < oldPrice) {
-                        //send alert
+                        //send alert 
                         const {
                             data: { user },
                         } = await supabase.auth.admin.getUserById(product.user_id);
 
                         if (user?.email) {
-                            //send email
+                            //send email to
                             const emailResult = await sendPriceDropAlert(
                                 user.email,
                                 product,
@@ -124,4 +124,4 @@ export async function POST(request) {
     }
 }
 
-// curl -X POST https://don-price-watcher.vercel.app/api/cron/check-prices -H "Authorization: Bearer acd4d516c3e78cb40ac0a19cce05c34476c4171dbc7333dda3a7519fe9b42f63"
+// curl -X POST http://localhost:3000/api/cron/check-prices -H "Authorization: Bearer acd4d516c3e78cb40ac0a19cce05c34476c4171dbc7333dda3a7519fe9b42f63"
