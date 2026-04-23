@@ -108,7 +108,7 @@ export async function POST(request) {
             }
         }
 
-        return NextResponse.jason({
+        return NextResponse.json({
             success: true,
             message: "Price check completed",
             results,
@@ -124,5 +124,4 @@ export async function POST(request) {
     }
 }
 
-// curl -X POST https://your-vercel-url.vercel.app/api/cron/check-prices \
-//     -H "Authorization: Bearer your_cron_secret"
+// curl -X POST https://don-price-watcher.vercel.app/api/cron/check-prices -H "Authorization: Bearer acd4d516c3e78cb40ac0a19cce05c34476c4171dbc7333dda3a7519fe9b42f63"
