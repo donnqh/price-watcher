@@ -58,15 +58,17 @@ export async function POST(request) {
                 }
 
                 const newPrice = parseFloat(productData.currentPrice);
-                const oldPrice = parseFloat(product.currentPrice);
+                const oldPrice = parseFloat(product.current_price);
 
                 await supabase.from("products").update({
-                    currentPrice: newPrice,
+                    current_price: newPrice,
                     currency: productData.currencyCode || product.currency,
                     name: productData.productName || product.name,
                     image_url: productData.productImageUrl || product.image_url,
                     updated_at: new Date().toISOString(),
                 }).eq("id", product.id);
+
+                //console.log("FROM EMAIL:", process.env.RESEND_FROM_EMAIL);
 
                 if (oldPrice !== newPrice) {
                     await supabase.from("price_history").insert({
@@ -125,3 +127,7 @@ export async function POST(request) {
 }
 
 // curl -X POST http://localhost:3000/api/cron/check-prices -H "Authorization: Bearer acd4d516c3e78cb40ac0a19cce05c34476c4171dbc7333dda3a7519fe9b42f63"
+
+
+// curl -X POST https://don-price-watcher.vercel.app/api/cron/check-prices -H "Authorization: Bearer acd4d516c3e78cb40ac0a19cce05c34476c4171dbc7333dda3a7519fe9b42f63"
+
